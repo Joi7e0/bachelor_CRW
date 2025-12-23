@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco Router Wizard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Додаткові стилі для home.html, щоб він коректно відображався */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .router-img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      transition: transform 0.3s ease;
+      /* Використання id, щоб спрацював :hover з style.css */
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center mt-5">
+      <h1 class="mb-3 fw-bold">Welcome to Cisco Router Wizard!</h1>
+      <h2 class="text-secondary mb-4">Select a router</h2>
+      
+      <img src="Cisco_4331.png" alt="Cisco 4331 Router" id="router-img" class="router-img mb-4">
+      
+      <div id="router-list">
+        <a href="#" data-model="Cisco_4331">Cisco 4331</a>
+        <a href="#" data-model="Cisco_4321">Cisco 4321</a>
+        <a href="#" data-model="Cisco_2901">Cisco 2901</a>
+        <a href="#" data-model="Cisco_2911">Cisco 2911</a>
+        <a href="#" data-model="Cisco_1841">Cisco 1841</a>
+        <a href="#" data-model="Cisco_2811">Cisco 2811</a>
+        <a href="#" data-model="Cisco_1240">Cisco 1240</a>
+      </div>
+      
+      <button onclick="location.href='index.html'" class="btn-start">Start Config</button>
+  </div>
+</body>
+</html>

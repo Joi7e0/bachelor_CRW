@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Cisco Router Wizard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style-home.css">
+</head>
+<body>
+  <noscript>Javascript is not accessible</noscript>
+
+  <div class="container">
+    <h1 class="title has-text-centered">Cisco Router Wizard</h1>  
+
+    <!-- Step 1. IP Configuration -->
+  <h3>Step 1. IP Configuration</h3>
+  <div class="box">
+    <img src="/web/photo1.png" alt="Cisco 4331 Router" class="router-img mb-4" style="max-width: 200px; display: block; margin-bottom: 20px;">
+    <p>gi 0/0: <input type="text" id="g00-ip-Input" placeholder="192.168.111.1">
+               <input type="text" id="g00-mask-Input" placeholder="255.255.255.0"></p>
+    <p>gi 0/1: <input type="text" id="g01-ip-Input" placeholder="172.16.0.0">
+               <input type="text" id="g01-mask-Input" placeholder="255.255.0.0"></p>
+    <p>gi 0/2: <input type="text" id="g02-ip-Input" placeholder="10.0.0.1">
+               <input type="text" id="g02-mask-Input" placeholder="0.0.0.255"></p>
+  </div>
+
+  <!-- Step 2. Routing Protocol -->
+  <h3>Step 2. Routing Protocol</h3>
+  <div class="box">
+    <label><input type="radio" name="routing-protocol" value="OSPF"> OSPF</label>
+    <label><input type="radio" name="routing-protocol" value="RIP"> RIP</label>
+    <label><input type="radio" name="routing-protocol" value="EIGRP"> EIGRP</label>
+    <label><input type="radio" name="routing-protocol" value="BGP"> BGP</label>
+    <label><input type="radio" name="routing-protocol" value="IS-IS"> IS-IS</label>
+
+    <div id="ospf-options" class="hidden">
+      <label>Router ID:</label>
+      <input type="text" id="router-id" placeholder="1.1.1.1">
+    </div>
+  </div>
+
+    <!-- Step 3. IP Multicast-Routing -->
+    <h3>Step 3. IP Multicast-Routing</h3>
+    <div class="box">
+    <label>
+        <input type="checkbox" id="multicast-checkbox"> Enable IP Multicast Routing
+    </label>
+    </div>
+
+<!-- Step 4. Telephony-Service -->
+<h3>Step 4. Telephony-Service</h3>
+<div class="box">
+  <label><input type="checkbox" id="telephony-checkbox"> Enable Telephony Service</label>
+  <br><br>
+  <p>ephone-dn 1:
+    <input type="text" id="dn1-number" placeholder="100">
+    <input type="text" id="dn1-user" placeholder="user">
+  </p>
+  <p>ephone-dn 2:
+    <input type="text" id="dn2-number" placeholder="101">
+    <input type="text" id="dn2-user" placeholder="user">
+  </p>
+  <p>ephone-dn 3:
+    <input type="text" id="dn3-number" placeholder="102">
+    <input type="text" id="dn3-user" placeholder="user">
+  </p>
+</div>
+
+<!-- Step 5. Security Configuration -->
+<h3>Step 5. Security Configuration</h3>
+<div class="box">
+      <label><input type="checkbox" id="ssh"> Enable SSH</label>
+        <br><br>
+      <p>Hostname
+        <input type="text" placeholder="Router">
+      </p>
+      <p>Enable secret
+        <input type="password" placeholder="type">
+      </p>
+      <p>Console password
+        <input type="password" placeholder="******">
+      </p>
+      <p>VTY password
+        <input type="password" placeholder="******">
+      </p>
+
+</div>
+
+<!-- Step 6. DHCP Server Configuration -->
+<h3>Step 6. DHCP Server Configuration</h3>
+<div class="box">
+  <p><strong>Network:</strong> <input type="text" id="dhcp-network" placeholder="192.168.10.0"></p>
+  <p><strong>Subnet Mask:</strong> <input type="text" id="dhcp-mask" placeholder="255.255.255.0"></p>
+  <p><strong>Default Gateway:</strong> <input type="text" id="dhcp-gateway" placeholder="192.168.10.1"></p>
+  <p><strong>DNS Server:</strong> <input type="text" id="dhcp-dns" placeholder="8.8.8.8"></p>
+</div>
+
+
+<!-- Step 7. NAT Configuration -->
+<h3>Step 7. NAT Configuration</h3>
+<div class="box">
+  <p><strong>Inside interface:</strong>  <input type="text" placeholder="GigabitEthernet0/0"></p>
+  <p><strong>Outside interface:</strong> <input type="text" placeholder="GigabitEthernet0/1"></p>
+  <p><strong>Access-list for NAT:</strong><input type="text" placeholder="10 permit 192.168.10.0 0.0.0.255"></p>
+  <button>Enable NAT Overload</button>
+</div>
+
+    <!-- Step 8. SNMP & Monitoring -->
+    <h3>Step 8. SNMP & Monitoring</h3>
+    <div class="box">
+      <p>Community String:
+        <input type="text" placeholder="public">
+      </p>
+      <p>Contact:
+        <input type="text" placeholder="admin@example.com">
+      </p>
+      <p>Location:
+        <input type="text" placeholder="Server Room">
+      </p>
+      <label><input type="checkbox"> Enable SNMP</label>
+    </div>
+
+    <!-- Step 9. Save or Export -->
+<h3>Step 9. Save or Export Configuration</h3>
+<button onclick="sendToPython()">Згенерувати</button>
+<h3 style="margin-top: 40px; color: #00ffcc;">Команди для налаштування Router:</h3>
+<div id="response"></div>
+
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

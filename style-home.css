@@ -1,0 +1,249 @@
+/* style-home.css — ОСТАТОЧНА ВЕРСІЯ (2025) */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+/* === 1. СКИДАННЯ ТА БАЗОВІ СТИЛІ === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+  color: #e0e0e0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+  background-attachment: fixed;
+}
+
+/* === 2. КОНТЕЙНЕР === */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(13, 27, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(0, 209, 178, 0.15);
+}
+
+/* === 3. ЗАГОЛОВКИ === */
+.title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  color: #00d1b2;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(0, 209, 178, 0.4);
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 40px 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(0, 209, 178, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* === 4. БЛОКИ (замість Bulma .box) === */
+.box {
+  background: #1b263b;
+  border: 1px solid #415a77;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 209, 178, 0.15);
+}
+
+/* === 5. ФОРМИ ТА ПОЛЯ === */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 14px;
+  margin: 8px 0;
+  background: #0d1b2a;
+  border: 1px solid #415a77;
+  border-radius: 8px;
+  color: #00ffcc;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #00d1b2;
+  box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.25);
+  background: #112240;
+}
+
+/* Групи полів у рядок */
+.box p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+ 20px;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* Радіокнопки та чекбокси */
+.radio-group,
+.box label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: 16px;
+  color: #e0e0e0;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #00d1b2;
+  transform: scale(1.2);
+}
+
+/* Додаткові OSPF опції */
+#ospf-options {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed #415a77;
+}
+
+/* === 6. КНОПКИ === */
+button,
+.button {
+  background: linear-gradient(135deg, #00d1b2, #00ffcc);
+  color: #0d1b2a;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  min-width: 220px;
+  height: 56px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 209, 178, 0.3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+button:hover,
+.button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 209, 178, 0.5);
+  background: linear-gradient(135deg #00ffcc, #00d1b2);
+}
+
+/* Головна кнопка генерації */
+#generate-btn {
+  display: block;
+  margin: 40px auto;
+}
+
+/* === 7. ЗОНА ВИВЕДЕННЯ КОМАНД === */
+#response {
+  margin-top: 40px;
+  background: #0a0f1a !important;
+  border: 2px solid #00d1b2 !important;
+  border-radius: 14px;
+  padding: 24px;
+  min-height: 260px;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #00ffea !important;        /* яскравіший бірюзовий */
+  text-shadow: 0 0 8px rgba(0, 255, 234, 0.4);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 209, 178, 0.3);
+  background-image: 
+    linear-gradient(rgba(10, 20, 40, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 20, 40, 0.4) 1px, transparent 1px);
+  background-size: 30px 30px;
+  backdrop-filter: blur(4px);
+}
+
+/* Додатково — підсвітка ключових слів (не обов’язково, але дуже красиво) */
+#response::before {
+  content: "Router(config)# ";
+  color: #ff6bc4;
+  font-weight: bold;
+}
+
+/* === 8. КАРТИНКА РОУТЕРА === */
+.router-img {
+  max-width: 220px;
+  border-radius: 10px;
+  border: 2px solid #415a77;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto 25px;
+}
+
+/* === 9. АДАПТИВНІСТЬ === */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* === 10. ПРИБИРАЄМО ВПЛИВ BULMA === */
+.columns, .column, .hero, .navbar { all: unset; }

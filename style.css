@@ -1,0 +1,107 @@
+/* Глобальний скид стилів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Кольорова схема: #0d1b2a (темний), #1b263b (середній), #415a77 (світліший), #00d1b2 (акцент) */
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+  color: #ffffff; /* Змінив основний колір тексту на білий для кращої читабельності на темному фоні */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Центрування контенту по вертикалі */
+  font-size: 18px; /* Зменшив основний розмір шрифту */
+}
+
+.container {
+  padding: 40px 20px;
+  max-width: 900px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Напівпрозорий фон для контейнера */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+  color: #00d1b2; /* Акцентний колір для заголовків */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #a7acb3; /* Сірий для підзаголовка */
+  margin-bottom: 30px;
+}
+
+#router-img {
+  max-width: 300px;
+  height: auto;
+  margin: 20px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+#router-img:hover {
+  transform: scale(1.05); /* Зменшив ефект, щоб не було занадто великим */
+  box-shadow: 0 0 20px #00d1b2;
+}
+
+#router-list {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  margin-bottom: 30px; /* Збільшив відступ */
+  font-size: 16px;
+}
+
+#router-list a {
+  background-color: rgba(0, 209, 178, 0.1); /* Прозорий акцент */
+  color: #00d1b2;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #00d1b2;
+}
+
+#router-list a:hover {
+  background-color: #00d1b2;
+  color: #0d1b2a;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 209, 178, 0.5);
+}
+
+button {
+  background-color: #00d1b2;
+  width: 250px; /* Збільшив ширину */
+  height: 65px; /* Збільшив висоту */
+  border: none;
+  border-radius: 10px;
+  color: #0d1b2a;
+  font-weight: 700;
+  padding: 10px 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 24px; /* Зменшив розмір шрифту на кнопці */
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+} 
+
+button:hover {
+  background-color: #00ffcc; /* Світліший акцент при наведенні */
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00d1b2;
+}
